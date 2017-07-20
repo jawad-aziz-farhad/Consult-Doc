@@ -83,6 +83,9 @@ public class SignIn extends AppCompatActivity {
         else {
 
             progressBar.setVisibility(View.VISIBLE);
+            signInBtn.setActivated(false);
+            signUp.setActivated(false);
+            forget.setActivated(false);
             firebaseAuth.signInWithEmailAndPassword(getEmail,getPass).addOnCompleteListener(SignIn.this, new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
@@ -95,6 +98,10 @@ public class SignIn extends AppCompatActivity {
                     else{
 
                         Toast.makeText(SignIn.this,"Something Went Wrong Please try again.",Toast.LENGTH_LONG).show();
+                        signInBtn.setActivated(true);
+                        signUp.setActivated(true);
+                        forget.setActivated(true);
+                        return;
                     }
                 }
             });

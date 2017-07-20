@@ -3,12 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.shanig.doctorapp.Fragment1">
+    tools:context="com.example.shanig.doctorapp.Fragment2">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/fragment1"
+        android:text="@string/fragment2"
         android:textSize="40dp"
         android:textStyle="bold"
         android:layout_centerInParent="true"/>

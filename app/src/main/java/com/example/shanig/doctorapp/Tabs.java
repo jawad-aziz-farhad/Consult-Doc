@@ -37,22 +37,21 @@ public class Tabs extends AppCompatActivity {
 
         final int[] tabicons = new int[]{
 
-                R.drawable.ic_location_on_black_24dp,
-                R.drawable.ic_email_black_24dp,
-                R.drawable.ic_flag_black_24dp
+                R.drawable.article_icon,
+                R.mipmap.doctor
+
 
         };
 
         tabLayout.getTabAt(0).setIcon(tabicons[0]);
         tabLayout.getTabAt(1).setIcon(tabicons[1]);
-        tabLayout.getTabAt(2).setIcon(tabicons[2]);
+
     }
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new Fragment1(), "ONE");
-        adapter.addFragment(new Fragment2(), "TWO");
-        adapter.addFragment(new Fragment3(), "THREE");
+        adapter.addFragment(new Fragment1(), getResources().getString(R.string.fragment1));
+        adapter.addFragment(new Fragment2(), getResources().getString(R.string.fragment2));
         viewPager.setAdapter(adapter);
     }
 

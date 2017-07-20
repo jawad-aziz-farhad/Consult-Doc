@@ -46,6 +46,7 @@ public class resetPassword extends AppCompatActivity {
                 else{
 
                     progressBar.setVisibility(View.VISIBLE);
+                    resetBtn.setActivated(false);
                     firebaseAuth.sendPasswordResetEmail(getEmail).addOnCompleteListener(resetPassword.this, new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
@@ -58,6 +59,7 @@ public class resetPassword extends AppCompatActivity {
                             else{
 
                                 Toast.makeText(resetPassword.this,"Something Went Wrong Please Try Again",Toast.LENGTH_LONG).show();
+                                resetBtn.setActivated(true);
                                 return;
                             }
                         }

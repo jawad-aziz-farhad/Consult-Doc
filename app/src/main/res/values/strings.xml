@@ -5,9 +5,8 @@
     <string name="enterAgain">E-mail or Password Entered is not correct</string>
     <string name="reset">Please Enter Your Registered E-mail To Reset Your Password </string>
     <string name="message">Please Check Your E-mail.We Have Sent You a Link To Reset Your Password</string>
-    <string name="fragment1">One</string>
-    <string name="fragment2">Two</string>
-    <string name="fragment3">Three</string>
+    <string name="fragment1">Medical</string>
+    <string name="fragment2">Doctor</string>
     <array name="dob">
         <item>day</item>
         <item>month</item>

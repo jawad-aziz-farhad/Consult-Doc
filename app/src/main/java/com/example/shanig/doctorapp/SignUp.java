@@ -92,6 +92,7 @@ public class SignUp extends AppCompatActivity {
 
 
             progressBar.setVisibility(View.VISIBLE);
+            signUpBtn.setActivated(false);
 
             firebaseAuth.createUserWithEmailAndPassword(getEmail,getPass).addOnCompleteListener(SignUp.this, new OnCompleteListener<AuthResult>() {
                 @Override
@@ -103,6 +104,7 @@ public class SignUp extends AppCompatActivity {
                     }
                     else{
                         Toast.makeText(SignUp.this,"Authentication Failed" + task.getException(),Toast.LENGTH_LONG).show();
+
                         return;
                     }
                 }
