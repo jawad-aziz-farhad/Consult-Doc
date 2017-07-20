@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAEBD7"
+    android:orientation="vertical"
+    android:scrollbarAlwaysDrawVerticalTrack="true">
+    <LinearLayout
+        android:id="@+id/logo_layout"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center">
+        <ImageView
+            android:id="@+id/app_logo"
+            android:src="@drawable/logo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="10dp"
+            android:paddingBottom="5dp"
+            />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo_layout"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="30dp"
+
+        android:elevation="4dp"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="0dp">
+
+                <EditText
+                    android:id="@+id/signInEmail"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_email_black_24dp"
+                    android:drawableTint="#FF4081"
+                    android:textStyle="italic"
+                    android:hint="   E-mail"
+                    android:inputType="textEmailAddress" />
+
+                <EditText
+                    android:id="@+id/signInpassword"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
+                    android:drawableTint="#FF4081"
+                    android:hint=" Password"
+                    android:textStyle="italic"
+                    android:inputType="textPassword" />
+
+            <TextView
+                android:id="@+id/forgetPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="5dp"
+                android:paddingTop="5dp"
+                android:textSize="14sp"
+                android:textStyle="italic"
+                android:text="Forgot Password?" />
+
+            <ProgressBar
+                android:id="@+id/progressSignIn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:visibility="gone"/>
+
+
+            <Button
+                android:id="@+id/signIn"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="22dp"
+                android:background="#00ccff"
+                android:text="Sign in"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="18sp" />
+            <TextView
+                android:id="@+id/signUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="14sp"
+                android:textStyle="italic"
+                android:text="Not a member? Sign Up"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

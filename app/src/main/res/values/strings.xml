@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">DocApp</string>
+    <string name="email">Please Enter Your E-mail</string>
+    <string name="password">Please Enter Your Password</string>
+    <string name="enterAgain">E-mail or Password Entered is not correct</string>
+    <string name="reset">Please Enter Your Registered E-mail To Reset Your Password </string>
+    <string name="message">Please Check Your E-mail.We Have Sent You a Link To Reset Your Password</string>
+    <string name="fragment1">One</string>
+    <string name="fragment2">Two</string>
+    <string name="fragment3">Three</string>
+    <array name="dob">
+        <item>day</item>
+        <item>month</item>
+        <item>Year</item>
+    </array>
+    <array name="gender">
+        <item>Male</item>
+        <item>Female</item>
+    </array>
+    <array name="type">
+        <item>Doctor</item>
+        <item>Patient</item>
+    </array>
+</resources>

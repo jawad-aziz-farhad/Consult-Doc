@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAEBD7"
+    android:padding="@dimen/activity_horizontal_margin">
+
+    <LinearLayout
+        android:id="@+id/logo_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_above="@+id/views_layout"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/app_logo"
+            android:src="@drawable/logo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            />
+     </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_centerInParent="true"
+            android:id="@+id/views_layout">
+
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_email_black_24dp"
+                android:drawableTint="#FF4081"
+                android:layout_marginTop="15dp"
+                android:hint="  E-mail"
+                android:textStyle="italic"
+                android:inputType="textEmailAddress" />
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
+                android:drawableTint="#FF4081"
+                android:layout_marginTop="15dp"
+                android:textStyle="italic"
+                android:hint=" Password"
+                android:inputType="textPassword" />
+
+            <EditText
+                android:id="@+id/dob"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:drawableLeft="@drawable/birthday"
+                android:drawableTint="#FF4081"
+                android:layout_marginTop="15dp"
+                android:textStyle="italic"
+                android:hint=" DOB"
+                android:inputType="text" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="#000"
+                    android:text="Sign Up As :   "/>
+                <Spinner
+                    android:id="@+id/user_type"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/type">
+
+                </Spinner>
+
+            </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="15dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="#000"
+                android:text="Gender :   "/>
+
+
+            <Spinner
+                android:id="@+id/gender"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:entries="@array/gender"
+                android:layout_gravity="left">
+            </Spinner>
+            </LinearLayout>
+            <ProgressBar
+                android:id="@+id/progress"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:visibility="gone"/>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/signUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#00ccff"
+        android:text="Sign Up"
+        android:textAllCaps="false"
+        android:textColor="#fff"
+        android:textSize="18sp"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>
