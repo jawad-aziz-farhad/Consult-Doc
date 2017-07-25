@@ -15,29 +15,51 @@
         android:theme="@style/MyMaterialTheme.AppBarOverlay">
 
         <android.support.design.widget.CollapsingToolbarLayout
-            android:id="@+id/toolbar_layout"
+            android:id="@+id/redeem_detail_collapsing_toolbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/button_selectorcolor"
             android:fitsSystemWindows="true"
-            app:contentScrim="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed">
-            <ImageView
-                android:id="@+id/art"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-            <TextView
-                android:id="@+id/articleTitle"
+            app:expandedTitleMarginBottom="16dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:expandedTitleTextAppearance="@style/TextAppearance.Design.CollapsingToolbar.Expanded.Shadow">
+
+            <!--header view-->
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:fitsSystemWindows="true"
-                android:gravity="left|bottom"
-                android:text="hello there"
-                android:padding="@dimen/activity_horizontal_margin"
-                android:layout_marginBottom="10dp"
-                android:textSize="30sp"
-                android:textStyle="bold"
-                android:fontFamily="sans-serif"
-                android:textColor="#000000"/>
+                app:layout_collapseMode="parallax">
+
+                <ImageView
+                    android:id="@+id/redeem_detail_top_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fitsSystemWindows="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/birthday" />
+
+                <!--A view that draws a semi tranparent black overlay so that title is visible once expanded -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@android:color/transparent" />
+
+                <TextView
+                    android:id="@+id/articleTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="left|bottom"
+                    android:fitsSystemWindows="true"
+                    android:padding="@dimen/activity_horizontal_margin"
+                    android:layout_marginBottom="18dp"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif"
+                    android:textColor="#000000"/>
+
+
+            </RelativeLayout>
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"

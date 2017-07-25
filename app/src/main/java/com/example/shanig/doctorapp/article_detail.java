@@ -32,11 +32,11 @@ public class article_detail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_article_detail);
 
-        layoutImage = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
+        layoutImage = (CollapsingToolbarLayout) findViewById(R.id.redeem_detail_collapsing_toolbar);
         title = (TextView) findViewById(R.id.articleTitle);
         /*date = (TextView) findViewById(R.id.articleDate);*/
         description = (TextView) findViewById(R.id.articleText);
-        articleImg = (ImageView) findViewById(R.id.art);
+        articleImg = (ImageView) findViewById(R.id.redeem_detail_top_bg);
         Intent intent = getIntent();
         String article = intent.getStringExtra("article");
 
@@ -52,20 +52,7 @@ public class article_detail extends AppCompatActivity {
         title.setText(articleTitle);
         /*date.setText(articleDate);*/
         description.setText(articleDes);
-        //layoutImage.setBackground();
-        Bitmap bitmap =null;
-        try {
-            bitmap = BitmapFactory.decodeStream((InputStream)new URL(getArticle.getImage()).getContent());
-
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        BitmapDrawable background = new BitmapDrawable(bitmap);
-        layoutImage.setBackgroundDrawable(background);
-
-        //Bitmap bmImg = BitmapFactory.decodeStream(getArticle.getImage());
-        //Glide.with(article_detail.this).load(getArticle.getImage()).into(articleImg);
+        Glide.with(this).load(getArticle.getImage()).into(articleImg);
 
     }
 }
