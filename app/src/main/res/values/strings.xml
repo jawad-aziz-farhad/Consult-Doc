@@ -20,4 +20,11 @@
         <item>Doctor</item>
         <item>Patient</item>
     </array>
+    <array name="tilte">
+        <item>Title 1</item>
+        <item>Title 2</item>
+        <item>Title 3</item>
+        <item>Title 4</item>
+        <item>Title 5</item>
+    </array>
 </resources>

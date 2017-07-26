@@ -22,7 +22,8 @@
         <activity android:name=".SignIn" />
         <activity android:name=".resetPassword" />
         <activity android:name=".message" />
-        <activity android:name=".Tabs"></activity>
+        <activity android:name=".Tabs" />
+        <activity android:name=".list"></activity>
     </application>
 
 </manifest>

@@ -1,12 +1,10 @@
 package com.example.shanig.doctorapp;
 
-
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import android.util.Log;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -16,26 +14,15 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
-/**
- * Created by ShaniG on 7/19/2017.
- */
-
-public class Fragment2 extends Fragment {
+public class list extends AppCompatActivity {
 
     ArrayList<articles> itemsArrayList;
-    ListView listView1;
-
-    public Fragment2(){
-
-    }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-    }
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+        setContentView(R.layout.activity_list);
+
         DatabaseReference db= FirebaseDatabase.getInstance().getReference();
 
         db.addChildEventListener(new ChildEventListener() {
@@ -66,7 +53,7 @@ public class Fragment2 extends Fragment {
                     itemsArrayList.add(addarticle);
                 }
 
-
+                populateData();
             }
 
             @Override
@@ -84,21 +71,10 @@ public class Fragment2 extends Fragment {
 
             }
         });
-
-        // Inflate the layout for this fragment
-        View fragmentLayout = inflater.inflate(R.layout.fragment2, container, false);
-
-        listView1 = (ListView) fragmentLayout.findViewById(R.id.articles);
-
-        return fragmentLayout;
-
-
     }
-
-    private void populateData(){
-
-        CustomListAdapter adapter = new CustomListAdapter(getActivity(), itemsArrayList);
-        listView1.setAdapter(adapter);
-
+    private void populateData() {
+        CustomListAdapter adapter = new CustomListAdapter(list.this, itemsArrayList);
+        ListView itemsListView  = (ListView) findViewById(R.id.articles);
+        itemsListView.setAdapter(adapter);
     }
 }
