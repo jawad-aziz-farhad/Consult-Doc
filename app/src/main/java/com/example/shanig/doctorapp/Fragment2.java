@@ -57,15 +57,6 @@ public class Fragment2 extends Fragment {
 
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-                for (DataSnapshot childsnap : dataSnapshot.getChildren()) {
-                    String title = (String) childsnap.child("title").getValue();
-                    String image = (String) childsnap.child("image").getValue();
-                    String description = (String) childsnap.child("description").getValue();
-                    String time = (String) childsnap.child("time").getValue();
-                    articles addarticle = new articles(title,description,image, time);
-                    itemsArrayList.add(addarticle);
-                }
-
 
             }
 

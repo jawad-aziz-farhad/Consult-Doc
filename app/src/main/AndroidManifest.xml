@@ -23,7 +23,10 @@
         <activity android:name=".resetPassword" />
         <activity android:name=".message" />
         <activity android:name=".Tabs" />
-        <activity android:name=".list"></activity>
+        <activity
+            android:name=".article_detail"
+            android:label="@string/title_activity_article_detail"
+            android:theme="@style/MyMaterialTheme" />
     </application>
 
 </manifest>

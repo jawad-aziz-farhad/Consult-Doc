@@ -1,13 +1,16 @@
 package com.example.shanig.doctorapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 //import android.widget.ArrayAdapter;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
@@ -20,6 +23,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 
@@ -29,8 +33,9 @@ import java.util.ArrayList;
 
 public class Fragment1 extends Fragment {
 
-    ArrayList<articles> itemsArrayList;
-    ListView listView1;
+    private ArrayList<articles> itemsArrayList;
+    private ListView listView1;
+    private ArrayList<String> articleKeys;
 
     public Fragment1(){
 
@@ -54,13 +59,16 @@ public class Fragment1 extends Fragment {
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
 
                 itemsArrayList= new ArrayList<>();
+                articleKeys = new ArrayList<>();
 
                 for (DataSnapshot childsnap : dataSnapshot.getChildren()) {
                     String title = (String) childsnap.child("title").getValue();
                     String image = (String) childsnap.child("image").getValue();
                     String description = (String) childsnap.child("description").getValue();
                     String time = (String) childsnap.child("time").getValue();
+                    String articleId = (String) childsnap.child("id").getValue();
                     itemsArrayList.add(new articles(title,description,image, time));
+                    articleKeys.add(articleId);
                 }
 
                 populateData();
@@ -92,9 +100,22 @@ public class Fragment1 extends Fragment {
 
         listView1 = (ListView) fragmentLayout.findViewById(R.id.articles);
 
+        listView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                articles article = itemsArrayList.get(position);
+
+                Gson gson = new Gson();
+                String article_data = gson.toJson(article);
+                Intent intent = new Intent(getActivity(),article_detail.class);
+                intent.putExtra("article",article_data);
+                startActivity(intent);
+
+            }
+        });
+
         return fragmentLayout;
-
-
     }
 
     private void populateData(){
