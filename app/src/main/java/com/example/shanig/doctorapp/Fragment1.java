@@ -36,7 +36,6 @@ public class Fragment1 extends Fragment {
     private ArrayList<articles> itemsArrayList;
     private ListView listView1;
     private ArrayList<String> articleKeys;
-
     public Fragment1(){
 
     }
@@ -106,12 +105,12 @@ public class Fragment1 extends Fragment {
 
                 articles article = itemsArrayList.get(position);
 
+                String getId = articleKeys.get(position);
                 Gson gson = new Gson();
                 String article_data = gson.toJson(article);
                 Intent intent = new Intent(getActivity(),article_detail.class);
                 intent.putExtra("article",article_data);
                 startActivity(intent);
-
             }
         });
 

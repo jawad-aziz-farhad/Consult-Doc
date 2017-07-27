@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+
+
+<LinearLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.shanig.doctorapp.Fragment1">
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <ListView
-        android:id="@+id/articles"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+<GridView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/grid_view"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:numColumns="2"
+    android:columnWidth="50dp"
+    android:horizontalSpacing="10dp"
+    android:verticalSpacing="10dp"
+    android:gravity="center"
+    android:stretchMode="columnWidth" >
 
-</RelativeLayout>
+
+
+</GridView>
+    </LinearLayout>

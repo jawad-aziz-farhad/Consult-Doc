@@ -52,20 +52,7 @@ public class article_detail extends AppCompatActivity {
         title.setText(articleTitle);
         /*date.setText(articleDate);*/
         description.setText(articleDes);
-        //layoutImage.setBackground();
-        Bitmap bitmap =null;
-        try {
-            bitmap = BitmapFactory.decodeStream((InputStream)new URL(getArticle.getImage()).getContent());
-
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        BitmapDrawable background = new BitmapDrawable(bitmap);
-        layoutImage.setBackgroundDrawable(background);
-
-        //Bitmap bmImg = BitmapFactory.decodeStream(getArticle.getImage());
-        //Glide.with(article_detail.this).load(getArticle.getImage()).into(articleImg);
+        Glide.with(article_detail.this).load(getArticle.getImage()).into(articleImg);
 
     }
 }
