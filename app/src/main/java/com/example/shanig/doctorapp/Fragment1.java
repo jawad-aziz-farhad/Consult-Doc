@@ -1,5 +1,6 @@
 package com.example.shanig.doctorapp;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -36,7 +37,9 @@ public class Fragment1 extends Fragment {
     private ArrayList<articles> itemsArrayList;
     private ListView listView1;
     private ArrayList<String> articleKeys;
-    public Fragment1(){
+    private ProgressDialog progressDialog;
+
+    public Fragment1() {
 
     }
 
@@ -51,13 +54,17 @@ public class Fragment1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        DatabaseReference db= FirebaseDatabase.getInstance().getReference();
+        progressDialog = new ProgressDialog(getActivity());
+        progressDialog.setTitle(getString(R.string.app_name));
+        progressDialog.setMessage(getString(R.string._message));
+        progressDialog.show();
+        DatabaseReference db = FirebaseDatabase.getInstance().getReference();
 
         db.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
 
-                itemsArrayList= new ArrayList<>();
+                itemsArrayList = new ArrayList<>();
                 articleKeys = new ArrayList<>();
 
                 for (DataSnapshot childsnap : dataSnapshot.getChildren()) {
@@ -66,7 +73,7 @@ public class Fragment1 extends Fragment {
                     String description = (String) childsnap.child("description").getValue();
                     String time = (String) childsnap.child("time").getValue();
                     String articleId = (String) childsnap.child("id").getValue();
-                    itemsArrayList.add(new articles(title,description,image, time));
+                    itemsArrayList.add(new articles(title, description, image, time));
                     articleKeys.add(articleId);
                 }
 
@@ -108,8 +115,8 @@ public class Fragment1 extends Fragment {
                 String getId = articleKeys.get(position);
                 Gson gson = new Gson();
                 String article_data = gson.toJson(article);
-                Intent intent = new Intent(getActivity(),article_detail.class);
-                intent.putExtra("article",article_data);
+                Intent intent = new Intent(getActivity(), article_detail.class);
+                intent.putExtra("article", article_data);
                 startActivity(intent);
             }
         });
@@ -117,10 +124,9 @@ public class Fragment1 extends Fragment {
         return fragmentLayout;
     }
 
-    private void populateData(){
-
+    private void populateData() {
+        progressDialog.dismiss();
         CustomListAdapter adapter = new CustomListAdapter(getActivity(), itemsArrayList);
         listView1.setAdapter(adapter);
-
     }
 }

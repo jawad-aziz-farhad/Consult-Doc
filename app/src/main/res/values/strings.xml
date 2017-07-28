@@ -7,6 +7,7 @@
     <string name="message">Please Check Your E-mail.We Have Sent You a Link To Reset Your Password</string>
     <string name="fragment1">Medical</string>
     <string name="fragment2">Doctor</string>
+    <string name="_message">Please wait...</string>
     <array name="dob">
         <item>day</item>
         <item>month</item>
@@ -22,4 +23,8 @@
     </array>
     <string name="title_activity_article_detail">article_detail</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_navigation">navigation</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>

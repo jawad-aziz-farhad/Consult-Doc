@@ -43,7 +43,7 @@ public class SplashScreen extends AppCompatActivity {
                         // This method will be executed once the timer is over
                         // Start your app main activity
                         if (_firebaseAuth.getCurrentUser()!= null){
-                            intent = new Intent(SplashScreen.this, Tabs.class);
+                            intent = new Intent(SplashScreen.this, navigation.class);
                         } else {
                             intent = new Intent(SplashScreen.this, SignIn.class);
                         }
