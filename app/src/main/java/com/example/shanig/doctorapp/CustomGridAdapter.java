@@ -21,11 +21,12 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class CustomGridAdapter extends BaseAdapter{
     private Context context; //context
-    private ArrayList<articles> items; //data source of the list adapter
-    public CustomGridAdapter(Context context, ArrayList<articles> items) {
+    private ArrayList<Categories> items; //data source of the list adapter
+    public CustomGridAdapter(Context context, ArrayList<Categories> items) {
         this.context = context;
         this.items = items;
     }
@@ -63,9 +64,9 @@ public class CustomGridAdapter extends BaseAdapter{
             grid = (CustomGridAdapter.ViewHolder) convertView.getTag();
         }
 
-        articles currentItem = (articles) getItem(position);
-        grid.articleTitle.setText(currentItem.getTitle());
-        Glide.with(context).load(currentItem.getImage()).into(grid.articleImage);
+        Categories currentItem = (Categories) getItem(position);
+        grid.articleTitle.setText(currentItem.getCategoryName());
+        Glide.with(context).load(currentItem.getCategoryImage()).into(grid.articleImage);
 
         return convertView;
     }

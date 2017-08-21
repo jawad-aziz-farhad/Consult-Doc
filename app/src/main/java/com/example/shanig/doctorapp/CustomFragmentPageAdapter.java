@@ -41,7 +41,6 @@ public class CustomFragmentPageAdapter extends FragmentPagerAdapter{
                 return "Articles";
             case 1:
                 return "Doctors";
-
         }
         return null;
     }

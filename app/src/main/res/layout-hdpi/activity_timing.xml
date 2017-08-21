@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAEBD7"
+    android:padding="@dimen/activity_horizontal_margin">
+
+
+    <LinearLayout
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_above="@+id/daysViews_layout"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/daysInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="@string/timings"
+            android:textSize="15sp"/>
+    </LinearLayout>
+    <ScrollView
+        android:id="@+id/daysViews_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_layout"
+        android:elevation="2dp"
+        android:layout_centerInParent="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:orientation="vertical"
+            android:layout_centerInParent="true">
+
+            <TextView
+                android:id="@+id/dayHeading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Select Day :"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:paddingLeft="@dimen/tabMargin"/>
+
+            <Spinner
+                android:id="@+id/days"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textAlignment="inherit"
+                android:entries="@array/Days"
+                android:textStyle="italic"
+                android:background="@drawable/edit_text_border"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/fromHeading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Starting Time :"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:layout_marginTop="@dimen/tableMargin"
+                android:paddingLeft="@dimen/tabMargin"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/from"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_access_time"
+                    android:drawableTint="@color/iconeColor"
+                    android:focusable="false"
+                    android:layout_marginTop="10dp"
+                    android:textAlignment="center"
+                    android:background="@drawable/edit_text_border"
+                    android:textSize="15sp"
+                    android:layout_marginRight="@dimen/tableMargin"/>
+
+                <Spinner
+                    android:id="@+id/fromTime"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:drawableTint="@color/iconeColor"
+                    android:layout_marginTop="10dp"
+                    android:textAlignment="center"
+                    android:entries="@array/hours2"
+                    android:background="@drawable/edit_text_border"
+                    android:textSize="15sp" />
+            </LinearLayout>
+                <TextView
+                    android:id="@+id/toHeading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ending Time :"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_marginTop="@dimen/tableMargin"
+                    android:paddingLeft="@dimen/tabMargin"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/to"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_access_time"
+                        android:drawableTint="@color/iconeColor"
+                        android:focusable="false"
+                        android:layout_marginTop="10dp"
+                        android:textAlignment="center"
+                        android:background="@drawable/edit_text_border"
+                        android:textSize="15sp"
+                        android:layout_marginRight="@dimen/tableMargin"/>
+
+                    <Spinner
+                        android:id="@+id/toTime"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:drawableTint="@color/iconeColor"
+                        android:layout_marginTop="10dp"
+                        android:textAlignment="center"
+                        android:entries="@array/hours2"
+                        android:background="@drawable/edit_text_border"
+                        android:textSize="15sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="@dimen/tabMargin"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/addTime"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_marginRight="5dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/qualificationbutton"
+            android:text="Add"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:textSize="18sp" />
+        <Button
+            android:id="@+id/doneTime"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@drawable/qualificationbutton"
+            android:text="Done"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:textSize="18sp" />
+    </LinearLayout>
+</RelativeLayout>

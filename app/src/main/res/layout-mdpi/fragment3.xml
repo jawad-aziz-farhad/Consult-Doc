@@ -1,16 +1,444 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/UserProfileDetails"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context="com.example.shanig.doctorapp.Fragment3">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/fragment2"
-        android:textSize="40dp"
-        android:textStyle="bold"
-        android:layout_centerInParent="true"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:gravity="center"
+        android:background="@drawable/border">
 
-</RelativeLayout>
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/activity_horizontal_margin">
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/status"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Available"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:textColor="@color/buttonSolid"
+                    android:gravity="center_horizontal"
+                    android:textSize="16sp"/>
+
+                <Button
+                    android:id="@+id/editTime"
+                    android:layout_width="45dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/button_border"
+                    android:elevation="@dimen/nav_header_height"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="right"
+                    android:textAlignment="center"
+                    android:text="@string/edit"
+                    android:textColor="@color/white" />
+            </TableRow>
+            <TableRow android:paddingTop="@dimen/tabMargin">
+                <TextView
+                    android:id="@+id/allTimes"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Show All Timings"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:textColor="@color/seaGreen"
+                    android:gravity="left"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:id="@+id/charges"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Fee :"
+                    android:textAlignment="center"
+                    android:gravity="left"
+                    android:textSize="14sp"/>
+
+            </TableRow>
+        </TableLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="@dimen/tableMargin"
+            android:layout_marginTop="@dimen/tabMargin"
+            android:padding="@dimen/activity_vertical_margin"
+            android:background="@color/pressed"/>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:background="@drawable/border"
+            android:layout_marginTop="@dimen/activity_horizontal_margin">
+
+            <TableRow
+                android:background="@drawable/tableborder">
+
+                <TextView
+                    android:id="@+id/heading"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/generalInfo"
+                    android:padding="4dp"
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
+
+                <Button
+                    android:id="@+id/editInfo"
+                    android:layout_width="45dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/button_border"
+                    android:elevation="@dimen/nav_header_height"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="right"
+                    android:textAlignment="center"
+                    android:text="@string/edit"
+                    android:textColor="@color/white" />
+
+
+            </TableRow>
+
+            <TableRow
+                android:padding="@dimen/tableMargin">
+
+                <TextView
+                    android:id="@+id/gender"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="@string/gender"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/gender1"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/tab_label" />
+            </TableRow>
+            <TableRow
+                android:paddingRight="@dimen/tableMargin"
+                android:paddingLeft="@dimen/tableMargin"
+                android:paddingBottom="@dimen/tableMargin">
+                <TextView
+                    android:id="@+id/age"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/age"
+                    android:textSize="@dimen/tab_label" />
+                <TextView
+                    android:id="@+id/age1"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/tab_label" />
+            </TableRow>
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:background="@drawable/border"
+            android:layout_marginTop="@dimen/tableMargin">
+
+            <TableRow
+                android:background="@drawable/tableborder">
+
+                <TextView
+                    android:id="@+id/specializationHeading"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/specializations"
+                    android:textSize="16sp"
+                    android:padding="4dp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/editspecialization"
+                    android:layout_width="45dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/button_border"
+                    android:elevation="@dimen/nav_header_height"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="right"
+                    android:textAlignment="center"
+                    android:text="@string/editProfile"
+                    android:textColor="@color/white" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="1dp"
+                android:background="@color/borderColor">
+
+                <TextView
+                    android:id="@+id/specialTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="4dp"
+                    android:text="Title"
+                    android:textSize="@dimen/fab_margin" />
+
+                <TextView
+                    android:id="@+id/specialFrom"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:padding="4dp"
+                    android:text="From"
+                    android:textSize="@dimen/fab_margin" />
+            </TableRow>
+
+            <TableRow
+                android:background="@drawable/border"
+                android:padding="@dimen/tableMargin">
+
+                <TextView
+                    android:id="@+id/special1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/tab_label" />
+                <TextView
+                    android:id="@+id/special2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/tab_label" />
+            </TableRow>
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:background="@drawable/border"
+            android:layout_marginTop="@dimen/tableMargin">
+
+            <TableRow
+                android:background="@drawable/tableborder">
+
+                <TextView
+                    android:id="@+id/certificationsHeading"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cerfifications"
+                    android:padding="4dp"
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
+                <Button
+                    android:id="@+id/editCertification"
+                    android:layout_width="45dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/button_border"
+                    android:elevation="@dimen/nav_header_height"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="right"
+                    android:textAlignment="center"
+                    android:text="@string/editProfile"
+                    android:textColor="@color/white" />
+
+            </TableRow>
+
+            <TableRow
+                android:background="@color/borderColor"
+                android:layout_marginTop="1dp">
+                <TextView
+                    android:id="@+id/certificateTitle"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+                    android:textSize="@dimen/fab_margin"
+                    android:text="Title" />
+                <TextView
+                    android:id="@+id/certificateFrom"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:padding="4dp"
+                    android:layout_weight="1"
+                    android:text="From"
+                    android:textSize="@dimen/fab_margin" />
+            </TableRow>
+
+            <TableRow
+                android:background="@drawable/border"
+                android:padding="@dimen/tableMargin">
+                <TextView
+                    android:id="@+id/certificate1"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/tab_label"/>
+
+
+                <TextView
+                    android:id="@+id/certificate2"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/tab_label" />
+            </TableRow>
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:background="@drawable/border"
+            android:layout_marginTop="@dimen/tableMargin">
+
+            <TableRow
+                android:background="@drawable/tableborder">
+
+                <TextView
+                    android:id="@+id/degreeHeading"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+                    android:text="@string/degrees"
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
+
+                <Button
+                    android:id="@+id/editDegrees"
+                    android:layout_width="45dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/button_border"
+                    android:elevation="@dimen/nav_header_height"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="right"
+                    android:textAlignment="center"
+                    android:text="@string/editProfile"
+                    android:textColor="@color/white" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_marginTop="1dp"
+                android:background="@color/borderColor">
+                <TextView
+                    android:id="@+id/degreeTitle"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:padding="4dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/fab_margin"
+                    android:text="Title" />
+                <TextView
+                    android:id="@+id/degreeFrom"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:padding="4dp"
+                    android:layout_weight="1"
+                    android:text="From"
+                    android:textSize="@dimen/fab_margin" />
+            </TableRow>
+
+            <TableRow
+                android:padding="@dimen/tableMargin"
+                android:background="@drawable/border">
+                <TextView
+                    android:id="@+id/degree1"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/tab_label" />
+
+
+                <TextView
+                    android:id="@+id/degree2"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/tab_label" />
+            </TableRow>
+
+
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:background="@drawable/border"
+            android:layout_marginTop="@dimen/tableMargin">
+
+            <TableRow
+                android:background="@drawable/tableborder">
+                <TextView
+                    android:id="@+id/addressHeading"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/address"
+                    android:layout_marginTop="2dp"
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
+                <Button
+                    android:id="@+id/editAddress"
+                    android:layout_width="45dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/button_border"
+                    android:elevation="@dimen/nav_header_height"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="6dp"
+                    android:gravity="right"
+                    android:textAlignment="center"
+                    android:text="@string/edit"
+                    android:textColor="@color/white" />
+            </TableRow>
+            <TableRow
+                android:padding="@dimen/tableMargin">
+                <TextView
+                    android:id="@+id/completeAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/tab_label"
+                    android:textAlignment="center"
+                    android:gravity="center_horizontal"/>
+            </TableRow>
+            <TableRow>
+                <ImageView
+                    android:id="@+id/addressLocation"
+                    android:layout_width="100dp"
+                    android:layout_height="200dp"
+                    android:padding="@dimen/tableMargin"
+                    android:layout_gravity="center" />
+            </TableRow>
+        </TableLayout>
+
+    </LinearLayout>
+</ScrollView>

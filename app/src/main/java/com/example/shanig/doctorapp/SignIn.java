@@ -93,7 +93,7 @@ public class SignIn extends AppCompatActivity {
                     progressBar.setVisibility(View.GONE);
                     if(task.isSuccessful()){
 
-                        startActivity(new Intent(SignIn.this,Tabs.class));
+                        startActivity(new Intent(SignIn.this,navigation.class));
                     }
                     else{
 

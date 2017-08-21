@@ -29,7 +29,6 @@ public class Tabs extends AppCompatActivity {
         setContentView(R.layout.activity_tabs);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        imageButton = (ImageButton) findViewById(R.id.navigate);
 
         setSupportActionBar(toolbar);
 
@@ -58,8 +57,8 @@ public class Tabs extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new Fragment1(), getResources().getString(R.string.fragment1));
-        adapter.addFragment(new Fragment2(), getResources().getString(R.string.fragment2));
+        adapter.addFragment(new Fragment1(), getResources().getString(R.string.fragment5));
+        adapter.addFragment(new Fragment2(), getResources().getString(R.string.fragment6));
         viewPager.setAdapter(adapter);
     }
 

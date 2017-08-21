@@ -13,8 +13,8 @@
         <ImageView
             android:id="@+id/app_logo"
             android:src="@drawable/logo"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_marginTop="20dp"
             android:paddingBottom="5dp"
             />
@@ -26,9 +26,8 @@
         android:layout_below="@+id/logo_layout"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="30dp"
-        android:layout_marginTop="10dp"
-
-        android:elevation="4dp"
+        android:background="@drawable/edit_text_layout"
+        android:elevation="2dp"
         android:orientation="vertical"
         android:padding="20dp">
 
@@ -36,28 +35,28 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingTop="30dp">
+            >
 
-                <EditText
-                    android:id="@+id/signInEmail"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:drawableLeft="@drawable/ic_email_black_24dp"
-                    android:drawableTint="#FF4081"
-                    android:textStyle="italic"
-                    android:hint="   E-mail"
-                    android:inputType="textEmailAddress" />
+            <EditText
+                android:id="@+id/signInEmail"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_email_black_24dp"
+                android:drawableTint="#FF4081"
+                android:textStyle="italic"
+                android:hint="   E-mail"
+                android:inputType="textEmailAddress" />
 
-                <EditText
-                    android:id="@+id/signInpassword"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
-                    android:drawableTint="#FF4081"
-                    android:hint=" Password"
-                    android:textStyle="italic"
-                    android:inputType="textPassword" />
+            <EditText
+                android:id="@+id/signInpassword"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
+                android:drawableTint="#FF4081"
+                android:hint=" Password"
+                android:textStyle="italic"
+                android:inputType="textPassword" />
 
             <TextView
                 android:id="@+id/forgetPassword"

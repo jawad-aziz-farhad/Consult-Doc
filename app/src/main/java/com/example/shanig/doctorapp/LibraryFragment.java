@@ -33,6 +33,10 @@ public class LibraryFragment extends Fragment {
 
         viewPager.setAdapter(new CustomFragmentPageAdapter(getChildFragmentManager()));
         tabLayout.setupWithViewPager(viewPager);
+        tabLayout.setTabTextColors(
+                getResources().getColor(R.color.black),
+                getResources().getColor(R.color.white)
+        );
         setIcons();
 
         return view;

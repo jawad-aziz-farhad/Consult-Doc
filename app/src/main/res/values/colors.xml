@@ -10,4 +10,19 @@
     <color name="black">#000000</color>
     <color name="white_greyish">#EEEEEE</color>
     <color name="button_selectorcolor">#9E9E9E</color>
+    <color name="selectedTab">#00BFFF</color>
+    <color name="crimson">#DC143C</color>
+    <color name="appBacground">#FAEBD7</color>
+    <color name="seaGreen">#20B2AA</color>
+    <color name="borderColor">#DCDCDC</color>
+    <color name="buttonSolid">#9ACD32</color>
+    <color name="pressed">#556B2F</color>
+    <color name="iconeColor">#FF4081</color>
+    <color name="registerButton">#00ccff</color>
+    <color name="snowWhite">#FFFAFA</color>
+    <color name="seaShell">#FFF5EE</color>
+    <color name="lightGrey">#D3D3D3</color>
+    <color name="darkGrey">#A9A9A9</color>
+    <color name="silver">#C0C0C0</color>
+
 </resources>

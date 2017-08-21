@@ -58,7 +58,6 @@ public class CustomListAdapter extends BaseAdapter {
         viewHolder.articleTitle.setText(currentItem.getTitle());
         viewHolder.articleTime.setText(currentItem.getTime());
         Glide.with(context).load(currentItem.getImage()).into(viewHolder.articleImage);
-        //Picasso.with(context).load(currentItem.getImage()).into(viewHolder.articleImage);
         return convertView;
     }
 

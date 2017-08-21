@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/seaGreen">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="-10dp"
+                android:padding="@dimen/activity_horizontal_margin">
+
+                <TextView
+                    android:id="@+id/UserName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18sp"
+                    android:text="@string/app_name"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="5dp"/>
+
+                <TextView
+                    android:id="@+id/UserCategory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:text="@string/app_name"
+                    android:layout_marginLeft="5dp"/>
+
+                <Button
+                    android:id="@+id/appointmentButton"
+                    android:layout_height="30dp"
+                    android:layout_width="144dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/button_border"
+                    android:elevation="@dimen/nav_header_height"
+                    android:text="@string/appointment"
+                    android:textColor="@color/white"/>
+
+            </LinearLayout>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ProfileImage"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="right|top"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/imageclick"
+                android:src="@drawable/ic_account_circle"/>
+
+
+        </LinearLayout>
+        <android.support.design.widget.TabLayout
+            android:id="@+id/profileTab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabMode="fixed"
+            app:tabIndicatorColor="@color/crimson"
+            app:tabGravity="fill"/>
+
+
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/profileDetails"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+</LinearLayout>

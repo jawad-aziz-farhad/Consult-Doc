@@ -55,7 +55,7 @@ public class Fragment1 extends Fragment {
                              Bundle savedInstanceState) {
 
         progressDialog = new ProgressDialog(getActivity());
-        progressDialog.setTitle(getString(R.string.app_name));
+        //progressDialog.setTitle(getString(R.string.app_name));
         progressDialog.setMessage(getString(R.string._message));
         progressDialog.show();
         DatabaseReference db = FirebaseDatabase.getInstance().getReference();
